@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetris</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game">
+    <aside class="panel left">
+      <section class="box">
+        <h2>Hold</h2>
+        <canvas id="hold" width="120" height="120"></canvas>
+      </section>
+      <section class="box stats">
+        <div><span>Score</span><strong id="score">0</strong></div>
+        <div><span>Best</span><strong id="best">0</strong></div>
+        <div><span>Level</span><strong id="level">1</strong></div>
+        <div><span>Lines</span><strong id="lines">0</strong></div>
+      </section>
+    </aside>
+
+    <div class="board-wrap">
+      <canvas id="board" width="300" height="600"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>TETRIS</h1>
+        <p id="overlay-msg">Press <kbd>Enter</kbd> to start</p>
+        <button id="start-btn">Start</button>
+      </div>
+    </div>
+
+    <aside class="panel right">
+      <section class="box">
+        <h2>Next</h2>
+        <canvas id="next" width="120" height="360"></canvas>
+      </section>
+      <section class="box controls">
+        <h2>Controls</h2>
+        <ul>
+          <li><kbd>←</kbd><kbd>→</kbd> Move</li>
+          <li><kbd>↓</kbd> Soft drop</li>
+          <li><kbd>Space</kbd> Hard drop</li>
+          <li><kbd>↑</kbd><kbd>X</kbd> Rotate CW</li>
+          <li><kbd>Z</kbd> Rotate CCW</li>
+          <li><kbd>C</kbd><kbd>Shift</kbd> Hold</li>
+          <li><kbd>P</kbd><kbd>Esc</kbd> Pause</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <div class="touch-controls" aria-hidden="true">
+    <button data-action="left">◀</button>
+    <button data-action="rotate">⟳</button>
+    <button data-action="right">▶</button>
+    <button data-action="down">▼</button>
+    <button data-action="drop">⤓</button>
+    <button data-action="hold">H</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
